@@ -33,15 +33,21 @@ public class CategoryDaoTestCase {
 		categoryAttendu = new Category(1, "Music");
 		
 	}
+	
+	
+	
 
 	@After
 	public void tearDown() throws Exception {
 		System.out.println("Libé©ration des resources");
 		categoryDao = null;
-		//connection.close();
 		connection = null;
 	}
 
+	
+	
+	
+	
 	@Test
 	public void testResearchAllCategories() {
 		System.out.println("Réccupération de la liste des categories ");
