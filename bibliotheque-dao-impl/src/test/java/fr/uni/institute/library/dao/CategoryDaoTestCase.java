@@ -38,11 +38,11 @@ public class CategoryDaoTestCase {
 	public void tearDown() throws Exception {
 		System.out.println("Libé©ration des resources");
 		categoryDao = null;
-		connection.close();
+		//connection.close();
 		connection = null;
 	}
 
-	@Test(timeout=200)
+	@Test(
 	public void testResearchAllCategories() {
 		System.out.println("Réccupération de la liste des categories ");
 		try {
