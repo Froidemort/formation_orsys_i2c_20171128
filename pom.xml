@@ -31,6 +31,17 @@
 		        <artifactId>maven-pmd-plugin</artifactId>
 		        <version>3.8</version>
 		</plugin>
+		<!-- 
+		<plugin>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>findbugs-maven-plugin</artifactId>
+		</plugin>
+		 -->
+		<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-javadoc-plugin</artifactId>
+		        <version>3.0.0-M1</version>
+		</plugin>
   </plugins>
   
   
@@ -60,16 +71,29 @@
   </dependencies>
   
   
+  <distributionManagement>
+		<!-- Publish versioned releases here -->
+		<repository>
+			<id>nexus</id>
+			<name>My releases</name>
+			<url>http://localhost:8081/repository/maven-releases/</url>
+		</repository>
+		<!-- Publish snapshots here -->
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>My snapshots</name>
+			<url>http://localhost:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	<!-- 
+		<site>
+			<id>nexus-repo</id>
+			<url>dav:http://localhost:8081/repository/sites/</url>
+		</site>
+    -->		
+</distributionManagement>
   
   
-   <modules>
-   	<module>bibliotheque-modele</module>
-   	<module>bibliotheque-dao-api</module>
-   	<module>bibliotheque-dao-impl</module>
-   	<module>bibliotheque-service-api</module>
-   	<module>bibliotheque-service-impl</module>
-    <module>bibliotheque-web</module>
-  </modules>
+  
   
   
   <build>
